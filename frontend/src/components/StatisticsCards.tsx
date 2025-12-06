@@ -27,9 +27,12 @@ export function StatisticsCards({
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
       {stats.map((stat) => (
         <div key={stat.sneaker_id} className="card-glass p-6">
-          <h4 className="text-sm font-semibold text-gray-700 mb-3 truncate">
+          <h4 className="text-sm font-semibold text-gray-700 mb-1 truncate">
             {stat.name}
           </h4>
+          <p className="text-xs text-gray-500 mb-3">
+            SKU: {stat.sku}
+          </p>
 
           <div className="space-y-3">
             {/* Current vs Retail Price */}

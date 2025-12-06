@@ -60,6 +60,7 @@ export interface ChartData {
 export interface SneakerStats {
   sneaker_id: number;
   name: string;
+  sku: string;
   current_price: number;
   retail_price: number;
   price_change: number;

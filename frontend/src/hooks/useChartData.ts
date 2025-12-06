@@ -3,7 +3,7 @@
  */
 import { useMemo } from 'react';
 import { transformPriceData } from '../utils/helpers';
-import type { PricePoint, Sneaker, ChartData } from '../utils/types';
+import type { PricePoint, Sneaker } from '../utils/types';
 
 export function useChartData(priceHistory: PricePoint[], sneakers: Sneaker[]) {
   const chartData = useMemo(() => {

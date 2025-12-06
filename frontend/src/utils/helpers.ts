@@ -101,6 +101,7 @@ export function calculateStats(
     return {
       sneaker_id: sneaker.sneaker_id,
       name: `${sneaker.name} - ${sneaker.colorway}`,
+      sku: sneaker.sku,
       current_price: sneaker.price,
       retail_price: sneaker.price,
       price_change: 0,
@@ -125,6 +126,7 @@ export function calculateStats(
   return {
     sneaker_id: sneaker.sneaker_id,
     name: `${sneaker.name} - ${sneaker.colorway}`,
+    sku: sneaker.sku,
     current_price: currentPrice,
     retail_price: sneaker.price,
     price_change: priceChange,
