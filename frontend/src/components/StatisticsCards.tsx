@@ -4,6 +4,7 @@
  */
 import type { Sneaker, PricePoint } from '../utils/types';
 import { calculateStats, formatPrice } from '../utils/helpers';
+import { StarRating } from './StarRating';
 
 interface StatisticsCardsProps {
   sneakers: Sneaker[];
@@ -83,6 +84,24 @@ export function StatisticsCards({
                 <span className="text-gray-900 font-medium">
                   {formatPrice(stat.avg_price)}
                 </span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span className="text-gray-600">Release Date</span>
+                <span className="text-gray-900 font-medium">
+                  {stat.release_date}
+                </span>
+              </div>
+              <div className="flex justify-between text-xs items-center">
+                <span className="text-gray-600">Available Sizes</span>
+                <span className="text-gray-900 font-medium text-right">
+                  {stat.available_sizes}
+                </span>
+              </div>
+              <div className="flex justify-between text-xs items-center">
+                <span className="text-gray-600">Rating</span>
+                <div className="flex items-center gap-1">
+                  <StarRating rating={stat.ratings} size="sm" showValue />
+                </div>
               </div>
             </div>
           </div>

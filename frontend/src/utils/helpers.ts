@@ -108,6 +108,9 @@ export function calculateStats(
       min_price: sneaker.price,
       max_price: sneaker.price,
       avg_price: sneaker.price,
+      release_date: sneaker.release_date || 'Unknown',
+      available_sizes: sneaker.available_sizes || 'N/A',
+      ratings: sneaker.ratings || 0,
     };
   }
 
@@ -129,6 +132,9 @@ export function calculateStats(
     min_price: minPrice,
     max_price: maxPrice,
     avg_price: avgPrice,
+    release_date: sneaker.release_date || 'Unknown',
+    available_sizes: sneaker.available_sizes || 'N/A',
+    ratings: sneaker.ratings || 0,
   };
 }
 

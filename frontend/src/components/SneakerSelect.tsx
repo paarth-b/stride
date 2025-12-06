@@ -19,12 +19,17 @@ export function SneakerSelect({
   isLoading = false,
 }: SneakerSelectProps) {
   // Transform sneakers into select options
-  const options: SelectOption[] = sneakers.map((sneaker) => ({
-    value: sneaker.sneaker_id,
-    label: `${sneaker.name} - ${sneaker.colorway || 'Default'}`,
-    brand: sneaker.brand_name,
-    colorway: sneaker.colorway,
-  }));
+  const options: SelectOption[] = sneakers.map((sneaker) => {
+    const releaseYear = sneaker.release_date
+      ? new Date(sneaker.release_date).getFullYear().toString()
+      : 'Unknown';
+    return {
+      value: sneaker.sneaker_id,
+      label: `${sneaker.name} (${releaseYear}) - ${sneaker.colorway || 'Default'}`,
+      brand: sneaker.brand_name,
+      colorway: sneaker.colorway,
+    };
+  });
 
   // Group options by brand
   const groupedOptions = options.reduce(

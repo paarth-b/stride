@@ -267,6 +267,143 @@ def health_check():
     return {"status": "healthy", "timestamp": datetime.utcnow()}
 
 
+@app.get("/api/sneakers/{sneaker_id}/complete")
+def get_complete_sneaker_data(sneaker_id: int, session: Session = Depends(get_session)):
+    """
+    Get COMPLETE sneaker data showing ALL ER Diagram entities and relationships
+
+    Returns:
+    - Full Sneaker entity (all attributes)
+    - Related Brand entity (Made By relationship, N:1)
+    - Related Retailer entity (Sold By relationship via Brand, N:1, Total Participation)
+    - Price History records (Was Historically Priced relationship, 1:N)
+    - Favorited by users count (Favorites relationship, M:N)
+
+    This endpoint demonstrates the COMPLETE ER Diagram implementation
+    """
+    # Get sneaker with brand and retailer (3 entities, 2 relationships)
+    sneaker_query = (
+        select(
+            Sneaker.sneaker_id,
+            Sneaker.name,
+            Sneaker.sku,
+            Sneaker.release_date,
+            Sneaker.colorway,
+            Sneaker.available_sizes,
+            Sneaker.price,
+            Sneaker.ratings,
+            Sneaker.brand_id,
+            Brand.name.label("brand_name"),
+            Brand.website.label("brand_website"),
+            Brand.retailer_id,
+            Retailer.name.label("retailer_name"),
+            Retailer.location.label("retailer_location"),
+            Retailer.website.label("retailer_website")
+        )
+        .join(Brand, Sneaker.brand_id == Brand.brand_id)
+        .join(Retailer, Brand.retailer_id == Retailer.retailer_id)
+        .where(Sneaker.sneaker_id == sneaker_id)
+    )
+
+    sneaker_data = session.exec(sneaker_query).first()
+
+    if not sneaker_data:
+        raise HTTPException(status_code=404, detail="Sneaker not found")
+
+    # Get price history (Was Historically Priced relationship, 1:N)
+    price_history = session.exec(
+        select(PriceHistory)
+        .where(PriceHistory.sneaker_id == sneaker_id)
+        .order_by(PriceHistory.timestamp.desc())
+    ).all()
+
+    # Get favorites count (Favorites relationship, M:N)
+    favorites_count = session.exec(
+        select(Favorites)
+        .where(Favorites.sneaker_id == sneaker_id)
+    ).all()
+
+    # Build comprehensive response
+    return {
+        "er_diagram_implementation": "COMPLETE - All 5 Entities, All 4 Relationships",
+        "entity_sneaker": {
+            "sneaker_id": sneaker_data.sneaker_id,
+            "name": sneaker_data.name,
+            "sku": sneaker_data.sku,
+            "release_date": sneaker_data.release_date,
+            "colorway": sneaker_data.colorway,
+            "available_sizes": sneaker_data.available_sizes,
+            "price": sneaker_data.price,
+            "ratings": sneaker_data.ratings,
+            "brand_id": sneaker_data.brand_id
+        },
+        "relationship_made_by": {
+            "type": "Many-to-One (N:1)",
+            "description": "Sneaker → Brand",
+            "constraint": "NOT NULL on brand_id",
+            "entity_brand": {
+                "brand_id": sneaker_data.brand_id,
+                "name": sneaker_data.brand_name,
+                "website": sneaker_data.brand_website,
+                "retailer_id": sneaker_data.retailer_id
+            }
+        },
+        "relationship_sold_by": {
+            "type": "Many-to-One (N:1)",
+            "description": "Brand → Retailer",
+            "constraint": "TOTAL PARTICIPATION - NOT NULL on brand.retailer_id",
+            "note": "Sneaker inherits retailer through brand (no direct retailer_id on sneaker)",
+            "entity_retailer": {
+                "retailer_id": sneaker_data.retailer_id,
+                "name": sneaker_data.retailer_name,
+                "location": sneaker_data.retailer_location,
+                "website": sneaker_data.retailer_website
+            }
+        },
+        "relationship_was_historically_priced": {
+            "type": "One-to-Many (1:N)",
+            "description": "Sneaker → Price History",
+            "constraint": "Price History is weak/dependent entity",
+            "note": "CASCADE on DELETE - price history deleted when sneaker is deleted",
+            "entity_price_history": {
+                "total_records": len(price_history),
+                "latest_5_prices": [
+                    {
+                        "price_id": ph.price_id,
+                        "price": ph.price,
+                        "timestamp": ph.timestamp,
+                        "sneaker_id": ph.sneaker_id
+                    }
+                    for ph in price_history[:5]
+                ]
+            }
+        },
+        "relationship_favorites": {
+            "type": "Many-to-Many (M:N)",
+            "description": "User ↔ Sneaker",
+            "implementation": "Junction table: favorites(user_id, sneaker_id)",
+            "constraint": "Composite Primary Key: (user_id, sneaker_id)",
+            "total_users_favorited": len(favorites_count),
+            "favorited_by_users": [
+                {
+                    "user_id": fav.user_id,
+                    "sneaker_id": fav.sneaker_id,
+                    "created_at": fav.created_at
+                }
+                for fav in favorites_count[:5]
+            ]
+        },
+        "constraints_enforced": {
+            "primary_keys": "All 5 entities have PKs",
+            "foreign_keys": "brand_id, retailer_id, sneaker_id, user_id",
+            "unique_constraints": "sneaker.sku, user.email",
+            "check_constraints": "sneaker.ratings (1-5)",
+            "total_participation": "brand.retailer_id NOT NULL",
+            "cascade_delete": "price_history and favorites CASCADE on sneaker delete"
+        }
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(

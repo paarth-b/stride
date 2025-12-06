@@ -3,6 +3,7 @@
  * Matches backend API models
  */
 
+// Entity Types
 export interface Brand {
   brand_id: number;
   name: string;
@@ -30,6 +31,7 @@ export interface Sneaker {
   retailer_id: number;
 }
 
+// Price History Type
 export interface PricePoint {
   timestamp: string;
   price: number;
@@ -65,4 +67,7 @@ export interface SneakerStats {
   min_price: number;
   max_price: number;
   avg_price: number;
+  release_date: string;
+  available_sizes: string;
+  ratings: number;
 }
