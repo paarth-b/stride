@@ -1,0 +1,80 @@
+2,Dunk Low,SK0002-X,2012,Triple White,"8,9,10",120.0,5,2
+3,Air Force 1,SK0003-X,2013,Triple Black,"9,10,11",130.0,3,3
+4,Air Max 1,SK0004-X,2014,University Blue,"8.5,9.5,10.5",140.0,4,1
+6,Yeezy 350 V2,SK0006-X,2016,Grey,"10,11,12",160.0,3,3
+7,Ultraboost 1.0,SK0007-X,2017,Bone,"7,8,9,10",100.0,4,1
+8,Samba,SK0008-X,2018,Volt,"8,9,10",110.0,5,2
+9,Stan Smith,SK0009-X,2019,Panda,"9,10,11",120.0,3,3
+10,NMD R1,SK0010-X,2010,Bred,"8.5,9.5,10.5",130.0,4,1
+12,2002R,SK0012-X,2012,Triple White,"10,11,12",150.0,3,3
+13,550,SK0013-X,2013,Triple Black,"7,8,9,10",160.0,4,1
+14,1906R,SK0014-X,2014,University Blue,"8,9,10",100.0,5,2
+15,574,SK0015-X,2015,Chicago,"9,10,11",110.0,3,3
+17,Dunk Low,SK0017-X,2017,Bone,"9,9.5,10",130.0,5,2
+18,Air Force 1,SK0018-X,2018,Volt,"10,11,12",140.0,3,3
+19,Air Max 1,SK0019-X,2019,Panda,"7,8,9,10",150.0,4,1
+20,Air Max 97,SK0020-X,2010,Bred,"8,9,10",160.0,5,2
+21,Yeezy 350 V2,SK0021-X,2011,Black/White,"9,10,11",100.0,3,3
+22,Ultraboost 1.0,SK0022-X,2012,Triple White,"8.5,9.5,10.5",110.0,4,1
+23,Samba,SK0023-X,2013,Triple Black,"9,9.5,10",120.0,5,2
+24,Stan Smith,SK0024-X,2014,University Blue,"10,11,12",130.0,3,3
+25,NMD R1,SK0025-X,2015,Chicago,"7,8,9,10",140.0,4,1
+27,2002R,SK0027-X,2017,Bone,"9,10,11",160.0,3,3
+28,550,SK0028-X,2018,Volt,"8.5,9.5,10.5",100.0,4,1
+29,1906R,SK0029-X,2019,Panda,"9,9.5,10",110.0,5,2
+30,574,SK0030-X,2010,Bred,"10,11,12",120.0,3,3
+32,Dunk Low,SK0032-X,2012,Triple White,"8,9,10",140.0,5,2
+33,Air Force 1,SK0033-X,2013,Triple Black,"9,10,11",150.0,3,3
+34,Air Max 1,SK0034-X,2014,University Blue,"8.5,9.5,10.5",160.0,4,1
+35,Air Max 97,SK0035-X,2015,Chicago,"9,9.5,10",100.0,5,2
+36,Yeezy 350 V2,SK0036-X,2016,Grey,"10,11,12",110.0,3,3
+37,Ultraboost 1.0,SK0037-X,2017,Bone,"7,8,9,10",120.0,4,1
+38,Samba,SK0038-X,2018,Volt,"8,9,10",130.0,5,2
+39,Stan Smith,SK0039-X,2019,Panda,"9,10,11",140.0,3,3
+40,NMD R1,SK0040-X,2010,Bred,"8.5,9.5,10.5",150.0,4,1
+42,2002R,SK0042-X,2012,Triple White,"10,11,12",100.0,3,3
+43,550,SK0043-X,2013,Triple Black,"7,8,9,10",110.0,4,1
+44,1906R,SK0044-X,2014,University Blue,"8,9,10",120.0,5,2
+45,574,SK0045-X,2015,Chicago,"9,10,11",130.0,3,3
+47,Dunk Low,SK0047-X,2017,Bone,"9,9.5,10",150.0,5,2
+48,Air Force 1,SK0048-X,2018,Volt,"10,11,12",160.0,3,3
+49,Air Max 1,SK0049-X,2019,Panda,"7,8,9,10",100.0,4,1
+50,Air Max 97,SK0050-X,2010,Bred,"8,9,10",110.0,5,2
+1,Air Jordan 1,SK0001-X,2011,Black/White,"7,8,9,10",170.5,4,1
+16,Air Jordan 1,SK0016-X,2016,Grey,"8.5,9.5,10.5",170.5,4,1
+31,Air Jordan 1,SK0031-X,2011,Black/White,"7,8,9,10",170.5,4,1
+46,Air Jordan 1,SK0046-X,2016,Grey,"8.5,9.5,10.5",170.5,4,1
+5,Air Max 1,SK0005-X,2015,Metallic Silver,"10,11,12",95.0,5,1
+11,Chuck 70,SK0011-X,2021,Bred,"8,9,10",101.0,3,1
+26,Ultraboost 1.0,SK0026-X,2020,Bred,"10,11,12",116.0,4,2
+41,Air Max 1,SK0041-X,2019,Purple Pulse,"7,8,9",131.0,5,8
+51,Chuck 70,SK0051-X,2013,Triple White,"7,8,9",141.0,4,7
+52,Dunk Low,SK0052-X,2014,Bred,"8,9,10",142.0,5,2
+53,Air Max 97,SK0053-X,2015,Metallic Silver,"7,8,9",143.0,4,8
+54,Yeezy 350 V2,SK0054-X,2016,Triple Black,"7,8,9",144.0,3,6
+55,Chuck 70,SK0055-X,2017,Panda,"10,11,12",145.0,5,8
+56,Gel-Lyte III,SK0056-X,2018,Volt,"7,8,9",146.0,5,1
+57,Gel-Lyte III,SK0057-X,2019,Volt,"7,8,9",147.0,4,6
+58,Gel-Lyte III,SK0058-X,2020,Triple White,"9,10,11",148.0,3,1
+59,Yeezy 350 V2,SK0059-X,2021,Triple White,"9,10,11",149.0,3,5
+60,Chuck 70,SK0060-X,2022,Purple Pulse,"7,8,9",150.0,3,4
+61,Chuck 70,SK0061-X,2023,Chicago,"8,9,10",151.0,3,3
+62,Yeezy 350 V2,SK0062-X,2024,Triple White,"9,10,11",152.0,5,1
+63,Yeezy 350 V2,SK0063-X,2025,Panda,"8,9,10",153.0,5,6
+64,Dunk Low,SK0064-X,2010,Triple Black,"10,11,12",154.0,5,7
+65,Ultraboost 1.0,SK0065-X,2011,Metallic Silver,"7,8,9",155.0,5,8
+66,Gel-Lyte III,SK0066-X,2012,Triple White,"10,11,12",156.0,3,2
+67,Chuck 70,SK0067-X,2013,Bred,"8,9,10",157.0,5,8
+68,Yeezy 350 V2,SK0068-X,2014,Triple Black,"9,10,11",158.0,4,2
+69,Old Skool,SK0069-X,2015,Chicago,"8.5,9.5,10.5",159.0,4,8
+70,Ultraboost 1.0,SK0070-X,2016,Purple Pulse,"10,11,12",160.0,4,6
+71,Gel-Lyte III,SK0071-X,2017,Infrared,"9,10,11",161.0,3,3
+72,Ultraboost 1.0,SK0072-X,2018,Triple White,"9,10,11",162.0,5,1
+73,Chuck 70,SK0073-X,2019,Infrared,"7,8,9",163.0,4,5
+74,Old Skool,SK0074-X,2020,Panda,"8,9,10",164.0,3,7
+75,Chuck 70,SK0075-X,2021,Panda,"7,8,9",165.0,3,3
+76,Old Skool,SK0076-X,2022,University Blue,"8,9,10",166.0,4,8
+77,Dunk Low,SK0077-X,2023,Metallic Silver,"10,11,12",167.0,4,7
+78,Chuck 70,SK0078-X,2024,Metallic Silver,"8.5,9.5,10.5",168.0,4,5
+79,Air Max 1,SK0079-X,2025,Purple Pulse,"9,10,11",169.0,3,8
+80,Chuck 70,SK0080-X,2010,Bred,"10,11,12",90.0,3,7
